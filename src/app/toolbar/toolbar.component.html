@@ -1,0 +1,33 @@
+<div class="toolbarContener">
+  <button
+    type="button"
+    [className]="
+      filterOflist.hidden
+        ? 'buttonFilter buttonFilterOn'
+        : 'buttonFilter buttonFilterOff'
+    "
+    (click)="updateList('hidden')"
+  >
+    <i class="fa-regular fa-eye"></i>
+  </button>
+  <button
+    type="button"
+    [className]="
+      filterOflist.finished
+        ? 'buttonFilter buttonFilterOn'
+        : 'buttonFilter buttonFilterOff'
+    "
+  >
+    <i class="fa-solid fa-list-check"></i>
+  </button>
+  <button
+    type="button"
+    [className]="
+      filterOflist.pendings
+        ? 'buttonFilter buttonFilterOn'
+        : 'buttonFilter buttonFilterOff'
+    "
+  >
+    <i class="fa-solid fa-list-ul"></i>
+  </button>
+</div>

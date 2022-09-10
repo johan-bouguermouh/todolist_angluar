@@ -16,7 +16,7 @@ export class ListoftaskService {
     },
   ];
 
-  private filter = {
+  public filter = {
     finished: true,
     pendings: true,
     hidden: true,
@@ -24,18 +24,23 @@ export class ListoftaskService {
 
   constructor() {}
 
-  setfilterFinished = function (){
-    this.filter.finished = this.filter.finished ? false : true
-  }
+  getFilter = function () {
+    return this.filter;
+  };
 
-  setfilterpendings = function (){
-    this.filter.pendings = this.filter.pendings ? false : true
-  }
+  setfilterFinished = function () {
+    this.filter.finished = this.filter.finished ? false : true;
+  };
 
-  setfilterhidden = function (){
-    this.filter.hidden = this.filter.hidden ? false : true
-  }
+  setfilterpendings = function () {
+    this.filter.pendings = this.filter.pendings ? false : true;
+  };
 
+  setfilterhidden = function () {
+    //console.log('before', this.filter.hidden);
+    this.filter.hidden = this.filter.hidden ? false : true;
+    console.log('after', this.filter.hidden);
+  };
 
   addTask = function (nameOfTask: string) {
     const NewTask = {

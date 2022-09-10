@@ -9,6 +9,8 @@ import { ListoftaskService } from '../listoftask.service';
 export class ToolbarComponent implements OnInit {
   constructor(private ListoftaskService: ListoftaskService) {}
 
+  filterOflist = this.ListoftaskService.getFilter();
+
   updateList(originCmd: string) {
     switch (originCmd) {
       case 'finished':
@@ -18,6 +20,7 @@ export class ToolbarComponent implements OnInit {
         this.ListoftaskService.setfilterpendings();
 
       case 'hidden':
+        console.log('IN');
         this.ListoftaskService.setfilterhidden();
     }
   }
