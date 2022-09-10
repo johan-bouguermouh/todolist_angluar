@@ -5,7 +5,6 @@ import { ListoftaskService } from '../listoftask.service';
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
-  providers: [ListoftaskService],
 })
 export class InputComponent implements OnInit {
   constructor(public ListoftaskService: ListoftaskService) {}
