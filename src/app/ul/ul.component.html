@@ -1,0 +1,8 @@
+<h2>List of Task</h2>
+
+<ul *ngFor="let task of itemTask">
+  <li class="liTask">
+    <input type="checkbox" name="task.name" id="li+task.id" checked="true" />
+    <label>{{ task.name }} </label>
+  </li>
+</ul>

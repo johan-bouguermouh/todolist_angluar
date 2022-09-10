@@ -13,6 +13,7 @@ export class InputComponent implements OnInit {
   addNewTask = function (e) {
     const nameOfNewTask: string = e.target.value;
     this.ListoftaskService.addTask(nameOfNewTask);
+    console.log(this.ListoftaskService.listOfTask);
   };
 
   ngOnInit() {}

@@ -3,7 +3,13 @@ import { Task } from './task';
 
 @Injectable()
 export class ListoftaskService {
-  public listOfTask: Task[] = [];
+  public listOfTask: Task[] = [
+    {
+      "id" : 0,
+      "name" : "test en dure",
+      "checked" : false
+    }
+  ];
   constructor() {}
 
   addTask = function (nameOfTask: string) {
@@ -12,7 +18,10 @@ export class ListoftaskService {
       name: nameOfTask,
       checked: false,
     };
-
     this.listOfTask.push(NewTask);
+  };
+
+  getTasks = function () {
+    return this.listOfTask;
   };
 }
