@@ -24,4 +24,9 @@ export class ListoftaskService {
   getTasks = function () {
     return this.listOfTask;
   };
+
+  updateCheckedTask = function (idTask: number) {
+    let arrayToEdit = [...this.listOfTask];
+    arrayToEdit[idTask].checked = arrayToEdit[idTask].checked ? false : true;
+  };
 }

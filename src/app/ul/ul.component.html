@@ -1,8 +1,9 @@
 <ul *ngFor="let task of itemTask" class="ulTask">
-  <li class="liTask" [class.taskfinished]="(task.checked)">
+  <li class="liTask" [class.taskfinished]="task.checked">
     <button
       type="button"
       [className]="task.checked ? 'radio radioOn' : ' radio radioOff'"
+      (click)="updateState(task.id)"
     ></button>
     <h4>{{ task.name }}</h4>
   </li>
