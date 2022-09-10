@@ -9,6 +9,7 @@ import { Task } from '../task';
 })
 export class UlComponent implements OnInit {
   constructor(private ListoftaskService: ListoftaskService) {}
+  
   @Input() itemTask = this.ListoftaskService.getTasks();
 
   updateState = function (id: number) {

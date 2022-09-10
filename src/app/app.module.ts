@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component';
 import { LiComponent } from './li/li.component';
 import { UlComponent } from './ul/ul.component';
 import { ListoftaskService } from './listoftask.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -17,6 +18,7 @@ import { ListoftaskService } from './listoftask.service';
     InputComponent,
     LiComponent,
     UlComponent,
+    ToolbarComponent,
   ],
   providers: [ListoftaskService],
   bootstrap: [AppComponent],

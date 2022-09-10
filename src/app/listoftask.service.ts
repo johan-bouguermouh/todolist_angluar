@@ -9,8 +9,33 @@ export class ListoftaskService {
       name: 'test en dure',
       checked: true,
     },
+    {
+      id: 1,
+      name: 'deuxième test dure',
+      checked: false,
+    },
   ];
+
+  private filter = {
+    finished: true,
+    pendings: true,
+    hidden: true,
+  };
+
   constructor() {}
+
+  setfilterFinished = function (){
+    this.filter.finished = this.filter.finished ? false : true
+  }
+
+  setfilterpendings = function (){
+    this.filter.pendings = this.filter.pendings ? false : true
+  }
+
+  setfilterhidden = function (){
+    this.filter.hidden = this.filter.hidden ? false : true
+  }
+
 
   addTask = function (nameOfTask: string) {
     const NewTask = {
@@ -22,7 +47,23 @@ export class ListoftaskService {
   };
 
   getTasks = function () {
-    return this.listOfTask;
+    switch (true) {
+      case !this.filter.hidden:
+        return null;
+
+      case !this.filter.finished && this.filter.pendings:
+        return this.listOfTask.filter(
+          (element: Task) => element.checked === false
+        );
+
+      case this.filter.finished && !this.filter.pendings:
+        return this.listOfTask.filter(
+          (element: Task) => element.checked === true
+        );
+
+      case this.filter.finished && this.filter.pendings && this.filter.hidden:
+        return this.listOfTask;
+    }
   };
 
   updateCheckedTask = function (idTask: number) {
