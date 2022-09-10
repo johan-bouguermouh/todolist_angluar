@@ -5,10 +5,10 @@ import { Task } from './task';
 export class ListoftaskService {
   public listOfTask: Task[] = [
     {
-      "id" : 0,
-      "name" : "test en dure",
-      "checked" : false
-    }
+      id: 0,
+      name: 'test en dure',
+      checked: true,
+    },
   ];
   constructor() {}
 
